@@ -1,8 +1,8 @@
 <img src="http://minitorch.github.io/_images/minitorch.svg">
 
-* (Full Guide)[Minitorch] 
+* [Full Guide](http://minitorch.github.io) 
 
-MiniTorch (https://github.com/minitorch/) is a *diy teaching library*
+MiniTorch is a *diy teaching library*
 for machine learning engineers who wish to learn about the internal
 concepts underlying deep learning systems.  It is a pure Python
 re-implementation of the (Torch)[http://www.pytorch.org]_ API
