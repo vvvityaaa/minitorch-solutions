@@ -1,5 +1,3 @@
-
-
 <img src="http://minitorch.github.io/_images/minitorch.svg">
 
 This repo is the full student code for minitorch. It is designed as a 
@@ -35,5 +33,7 @@ Topics covered:
 * GPU / CUDA Programming in NUMBA
 * Convolutions and Pooling
 * Advanced NN Functions
+=======
+# minitorch
 
 
