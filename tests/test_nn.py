@@ -60,31 +60,3 @@ def test_drop(t):
     assert q[idx] == t[idx]
     q = minitorch.dropout(t, 1.0)
     assert q[q._tensor.sample()] == 0.0
-    q = minitorch.dropout(t, 1.0, ignore=True)
-    idx = q._tensor.sample()
-    assert q[idx] == t[idx]
-
-
-@pytest.mark.task4_4
-@given(tensors(shape=(1, 1, 4, 4)))
-def test_softmax(t):
-    q = minitorch.softmax(t, 3)
-    x = q.sum(dim=3)
-    assert_close(x[0, 0, 0, 0], 1.0)
-
-    q = minitorch.softmax(t, 1)
-    x = q.sum(dim=1)
-    assert_close(x[0, 0, 0, 0], 1.0)
-
-    minitorch.grad_check(lambda a: minitorch.softmax(a, dim=2), t)
-
-
-@pytest.mark.task4_4
-@given(tensors(shape=(1, 1, 4, 4)))
-def test_log_softmax(t):
-    q = minitorch.softmax(t, 3)
-    q2 = minitorch.logsoftmax(t, 3).exp()
-    for i in q._tensor.indices():
-        assert_close(q[i], q2[i])
-
-    minitorch.grad_check(lambda a: minitorch.logsoftmax(a, dim=2), t)
