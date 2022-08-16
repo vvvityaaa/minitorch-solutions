@@ -47,7 +47,7 @@ def max(x, y):
 
 def is_close(x, y):
     ":math:`f(x) = |x - y| < 1e-2` "
-    return abs(x-y) < 1e-2
+    return abs(x - y) < 1e-2
 
 
 def sigmoid(x):
@@ -68,8 +68,7 @@ def sigmoid(x):
     Returns:
         float : sigmoid value
     """
-    return 1.0/(1.0 + exp(-x)) if x >= 0 else exp(x)/(1.0 + exp(x))
-
+    return 1.0 / (1.0 + exp(-x)) if x >= 0 else exp(x) / (1.0 + exp(x))
 
 
 def relu(x):
