@@ -27,7 +27,7 @@ def add(x, y):
 
 def neg(x):
     ":math:`f(x) = -x`"
-    return -x
+    return float(-x)
 
 
 def lt(x, y):
@@ -83,7 +83,7 @@ def relu(x):
     Returns:
         float : relu value
     """
-    return x if x > 0 else 0
+    return x if x > 0 else 0.0
 
 
 EPS = 1e-6
@@ -106,24 +106,17 @@ def log_back(x, d):
 
 def inv(x):
     ":math:`f(x) = 1/x`"
-    return 1 / x
+    return 1.0 / x
 
 
 def inv_back(x, d):
     r"If :math:`f(x) = 1/x` compute :math:`d \times f'(x)`"
-    return d * (-1 / x**2)
+    return d * (-1.0 / x**2)
 
 
 def relu_back(x, d):
     r"If :math:`f = relu` compute :math:`d \times f'(x)`"
-    d_f = None
-    if x > 0:
-        d_f = 1
-    elif x < 0:
-        d_f = 0
-    elif x == 0:
-        raise Exception("Derivative of ReLU is undefined at x == 0")
-    return d * d_f
+    return d if x > 0 else 0.0
 
 
 # ## Task 0.3
